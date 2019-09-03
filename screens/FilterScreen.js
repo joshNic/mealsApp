@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { View, Text, StyleSheet, Switch, Platform } from 'react-native';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 
@@ -6,10 +6,26 @@ import HeaderButton from '../components/HeaderButton';
 import Colors from '../constants/Colors';
 
 const FilterScreen = props => {
+  const { navigation } = props;
   const [isGlutenFree, setIsGlutenFree] = useState(false);
   const [isLactoseFree, setIsLactoseFree] = useState(false);
   const [isVegan, setIsVegan] = useState(false);
   const [isVegeterian, setIsVegeterian] = useState(false);
+
+  const saveFilters = useCallback(() => {
+    const appliedFilters = {
+      glutenFree: isGlutenFree,
+      lactoseFree: isLactoseFree,
+      vegan: isVegan,
+      isVegeterian: isVegeterian
+    };
+
+    console.log(appliedFilters);
+  }, [isGlutenFree, isLactoseFree, isVegan, isVegeterian]);
+
+  useEffect(() => {
+    navigation.setParams({ save: saveFilters });
+  }, [saveFilters]);
 
   const FilterSwitch = props => {
     return (
@@ -70,9 +86,7 @@ FilterScreen.navigationOptions = navData => {
         <Item
           title='Save'
           iconName='ios-save'
-          onPress={() => {
-            console.log('saving.....');
-          }}
+          onPress={navData.navigation.getParam('save')}
         />
       </HeaderButtons>
     )
