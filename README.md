@@ -39,15 +39,27 @@ Technologies
 
 #### Welcome Screen
 
-<img src="snapshots/home.png" alt="drawing" width="200" height="200"/>
+<img src="snapshots/home.png" alt="drawing" width="400" height="450"/>
+
+#### Meals Display Screen
+
+<img src="snapshots/display.png" alt="drawing" width="400" height="450"/>
+
 #### Favourite Screen
-<img src="snapshots/favourite.png" alt="drawing" width="200" height="200"/>
-#### Navigation Drawer
-<img src="snapshots/drawer.png" alt="drawing" width="200" height="200"/>
+
+<img src="snapshots/favourite.png" alt="drawing" width="400" height="450"/>
+
 #### Meal Detail Screen
-<img src="snapshots/detail.png" alt="drawing" width="200" height="200"/>
+
+<img src="snapshots/detail.png" alt="drawing" width="400" height="450"/>
+
+#### Navigation Drawer
+
+<img src="snapshots/drawer.png" alt="drawing" width="400" height="450"/>
+
 #### filter Screen
-<img src="snapshots/filter.png" alt="drawing" width="200" height="200"/>
+
+<img src="snapshots/filters.png" alt="drawing" width="400" height="450"/>
 
 ## Authors
 
