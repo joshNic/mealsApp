@@ -2,7 +2,17 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
+import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
+
+import mealsReducer from './store/reducers/meals';
 import MealsNavigator from './navigation/MealsNavigator';
+
+const rootReducer = combineReducers({
+  meals: mealsReducer
+});
+
+const store = createStore(rootReducer);
 
 const fetchFonts = async () => {
   const loadFont = await Font.loadAsync({
@@ -22,7 +32,11 @@ export default function App() {
       />
     );
   }
-  return <MealsNavigator />;
+  return (
+    <Provider store={store}>
+      <MealsNavigator />
+    </Provider>
+  );
 }
 
 const styles = StyleSheet.create({
